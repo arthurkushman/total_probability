@@ -22,13 +22,14 @@ class FormulaTest extends TestCase
     /**
      * @dataProvider totalProbabilityProvider
      *
-     * @param double|float $commonProb
-     * @param array        $probs
-     *
+     * @param array $factors
+     * @param array $probs
+     * @param $expected
+     * @throws \tp\exception\InvalidArgumentsException
      */
-    public function testTotalProbability($commonProb, array $probs, $expected)
+    public function testTotalProbability(array $factors, array $probs, $expected)
     {
-        $result = $this->formula->totalProbability($commonProb, $probs);
+        $result = $this->formula->totalProbability($factors, $probs);
         $this->assertEquals($expected, $result);
     }
 
@@ -64,10 +65,10 @@ class FormulaTest extends TestCase
     {
         return [
             [
-                0.33, [
-                0, 1, 0.45
-            ], 0.4785
-            ]
+                [0.33, 0.33, 0.33],
+                [0, 1, 0.45],
+                0.4785,
+            ],
         ];
     }
 
@@ -75,8 +76,8 @@ class FormulaTest extends TestCase
     {
         return [
             [
-                0.4, 0.8, 0.4785, 0.66875653082549646
-            ]
+                0.4, 0.8, 0.4785, 0.66875653082549646,
+            ],
         ];
     }
 
@@ -87,8 +88,8 @@ class FormulaTest extends TestCase
                 10, // overall amount of experiments ex.: 10 times flip a coin
                 3, // amount of successive expectations
                 0.5, // each time probability 1/2 heads or tails
-                0.1171875
-            ]
+                0.1171875,
+            ],
         ];
     }
 }

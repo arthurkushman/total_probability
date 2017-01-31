@@ -1,6 +1,8 @@
 <?php
 namespace tp;
 
+use tp\exception\InvalidArgumentsException;
+
 class Formula
 {
     /**
@@ -20,17 +22,21 @@ class Formula
     /**
      * Calculates total probability multiplying every discrete probability on common probability
      *
-     * @param double|float $commonProb
-     * @param array        $probs
-     *
+     * @param array $factors
+     * @param array $probs
      * @return float|int
+     * @throws InvalidArgumentsException
      */
-    public function totalProbability($commonProb, array $probs)
+    public function totalProbability(array $factors, array $probs)
     {
         $result = 0;
-        foreach($probs as $val)
+        if(count($factors) !== count($probs))
         {
-            $result += $commonProb * $val;
+            throw new InvalidArgumentsException('Arrays $factors and $probs should match.');
+        }
+        foreach($probs as $key => $probability)
+        {
+            $result += (double) $factors[$key] * (double) $probability;
         }
 
         return $result;
@@ -49,8 +55,8 @@ class Formula
     public function independentProbability($experimentsNum, $successExpectations, $successForEach)
     {
         return $this->combinations($experimentsNum, $successExpectations)
-               * ($successForEach ** $successExpectations) *
-               ((1 - $successForEach) ** ($experimentsNum - $successExpectations));
+        * ($successForEach ** $successExpectations) *
+        ((1 - $successForEach) ** ($experimentsNum - $successExpectations));
     }
 
     /**
