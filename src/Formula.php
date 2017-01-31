@@ -8,19 +8,20 @@ class Formula
      *
      * @param float $hypothesisProb
      * @param float $condProb
-     * @param float $commonProb
+     * @param float $totalProb
      *
      * @return float
      */
-    public function bayesProbability(double $hypothesisProb, double $condProb, double $commonProb)
+    public function bayesProbability($hypothesisProb, $condProb, $totalProb)
     {
-        return $hypothesisProb * $condProb / $commonProb;
+        return $hypothesisProb * $condProb / $totalProb;
     }
 
     /**
      * Calculates total probability multiplying every discrete probability on common probability
+     *
      * @param double|float $commonProb
-     * @param array $probs
+     * @param array        $probs
      *
      * @return float|int
      */
