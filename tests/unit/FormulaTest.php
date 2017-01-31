@@ -1,6 +1,8 @@
 <?php
 
-class FormulaTest
+use PHPUnit\Framework\TestCase;
+
+class FormulaTest extends TestCase
 {
 
 }
