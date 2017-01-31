@@ -3,7 +3,7 @@
 class Formula
 {
     /**
-     * Thomas Bayes
+     * Thomas Bayes probability
      *
      * @param float $hypothesisProb
      * @param float $condProb
@@ -16,6 +16,13 @@ class Formula
         return $hypothesisProb * $condProb / $commonProb;
     }
 
+    /**
+     * Calculates total probability multiplying every discrete probability on common probability
+     * @param float $commonProb
+     * @param array $probs
+     *
+     * @return float|int
+     */
     public function totalProbability(double $commonProb, array $probs)
     {
         $result = 0;
