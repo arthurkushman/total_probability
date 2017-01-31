@@ -48,8 +48,9 @@ class Formula
      */
     public function independentProbability($experimentsNum, $successExpectations, $successForEach)
     {
-        return $this->combinations($successExpectations, $experimentsNum)
-               * ($successForEach ** $successExpectations) * ((1 - $successForEach) ** ($experimentsNum - $successExpectations));
+        return $this->combinations($experimentsNum, $successExpectations)
+               * ($successForEach ** $successExpectations) *
+               ((1 - $successForEach) ** ($experimentsNum - $successExpectations));
     }
 
     /**

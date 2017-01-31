@@ -46,6 +46,20 @@ class FormulaTest extends TestCase
         $this->assertEquals($expected, $result);
     }
 
+    /**
+     * @dataProvider bernullisProvider
+     *
+     * @param $experimentsNum
+     * @param $successExpectations
+     * @param $successForEach
+     * @param $expected
+     */
+    public function testBernullisProbability($experimentsNum, $successExpectations, $successForEach, $expected)
+    {
+        $result = $this->formula->independentProbability($experimentsNum, $successExpectations, $successForEach);
+        $this->assertEquals($expected, $result);
+    }
+
     public function totalProbabilityProvider()
     {
         return [
@@ -62,6 +76,18 @@ class FormulaTest extends TestCase
         return [
             [
                 0.4, 0.8, 0.4785, 0.66875653082549646
+            ]
+        ];
+    }
+
+    public function bernullisProvider()
+    {
+        return [
+            [
+                10, // overall amount of experiments ex.: 10 times flip a coin
+                3, // amount of successive expectations
+                0.5, // each time probability 1/2 heads or tails
+                0.1171875
             ]
         ];
     }
