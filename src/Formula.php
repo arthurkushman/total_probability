@@ -35,4 +35,51 @@ class Formula
 
         return $result;
     }
+
+    /**
+     * Bernulli's Formula - probability of x-times in n experiments
+     * Pmn = Cmn * p^m * q^n-m
+     *
+     * @param $experimentsNum
+     * @param $successExpectations
+     * @param $successForEach
+     *
+     * @return float
+     */
+    public function independentProbability($experimentsNum, $successExpectations, $successForEach)
+    {
+        return $this->combinations($successExpectations, $experimentsNum)
+               * ($successForEach ** $successExpectations) * ((1 - $successForEach) ** ($experimentsNum - $successExpectations));
+    }
+
+    /**
+     * Calculate Combinatorial combinations
+     * Cmn = m! / (m-n)! * n!
+     *
+     * @param int $m
+     * @param int $n
+     *
+     * @return float
+     */
+    private function combinations(int $m, int $n)
+    {
+        return $this->fact($m) / ($this->fact($m - $n) * $this->fact($n));
+    }
+
+    /**
+     * @param int $n
+     *
+     * @return int
+     */
+    private function fact(int $n)
+    {
+        if($n > 1)
+        {
+            return $n * $this->fact($n - 1);
+        }
+        else
+        {
+            return 1;
+        }
+    }
 }
