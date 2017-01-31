@@ -36,6 +36,18 @@ echo $result; 6/11=0.(54)
 ```
 
 #### Thomas Bayes
+At the warehouse came 2 party products:
+- 1st - 4000 items
+- 2nd - 6000 items
+
+The percent of a non-standard items in 1st party is 20%
+
+The percent of a non-standard items in 1st party is 10%
+
+Randomly taken item of two parties turned out to be standard - what's the probability 
+relation of this item to 1st and 2nd party.  
+
+Part 1:
 
 
 #### Bernoulli distribution
