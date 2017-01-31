@@ -1,4 +1,5 @@
 <?php
+namespace tp;
 
 class Formula
 {
@@ -18,12 +19,12 @@ class Formula
 
     /**
      * Calculates total probability multiplying every discrete probability on common probability
-     * @param float $commonProb
+     * @param double|float $commonProb
      * @param array $probs
      *
      * @return float|int
      */
-    public function totalProbability(double $commonProb, array $probs)
+    public function totalProbability($commonProb, array $probs)
     {
         $result = 0;
         foreach($probs as $val)

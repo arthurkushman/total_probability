@@ -1,6 +1,8 @@
 <?php
+namespace tptests;
 
 use PHPUnit\Framework\TestCase;
+use tp\Formula;
 
 /**
  * Class FormulaTest
@@ -8,7 +10,7 @@ use PHPUnit\Framework\TestCase;
 class FormulaTest extends TestCase
 {
 
-    /** @var Formula  */
+    /** @var Formula */
     private $formula = null;
 
     public function setUp()
@@ -20,25 +22,27 @@ class FormulaTest extends TestCase
     /**
      * @dataProvider totalProbabilityProvider
      *
-     * @param float $commonProb
-     * @param array $probs
+     * @param double|float $commonProb
+     * @param array        $probs
      */
-    public function testTotalProbability(double $commonProb, array $probs)
+    public function testTotalProbability($commonProb, array $probs, $expected)
     {
-        $this->formula->totalProbability($commonProb, $probs);
+        $result = $this->formula->totalProbability($commonProb, $probs);
+        $this->assertEquals($expected, $result);
     }
 
     public function bayesProbability()
     {
-
     }
 
     public function totalProbabilityProvider()
     {
         return [
-          [0.33, [
-              0, 1, 0.45
-          ]]
+            [
+                0.33, [
+                0, 1, 0.45
+            ], 0.4785
+            ]
         ];
     }
 }
