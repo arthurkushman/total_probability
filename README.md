@@ -8,17 +8,21 @@ a great library to work with Total probability and Bayes, Bernoulli formulas to 
 #### Total probability 
 We have 3 baskets:
 
-1-st basket contains 7 black and 4 white balls
-2-nd basket contains only white balls
-3-d basket contains only black balls
+- 1-st basket contains 7 black and 4 white balls
+
+- 2-nd basket contains only white balls
+
+- 3-d basket contains only black balls
 
 What's the probability of taking a black ball?
 
 The basket choice is 1/3.
 
-In the 1st basket we've got 7/11(7+4) probability of taking black ball.
-In 2nd basket there are only white balls - probability is 0.
-In 3d basket there are only black balls - probability is 1.
+- In the 1st basket we've got 7/11(7+4) probability of taking black ball.
+
+- In 2nd basket there are only white balls - probability is 0.
+
+- In 3d basket there are only black balls - probability is 1.
 
 So we execute ```totalProbability``` method from ```Formula``` class:
 ```php
