@@ -27,10 +27,9 @@ The basket choice is 1/3.
 So we execute ```totalProbability``` method from ```Formula``` class:
 ```php
 $this->formula = new Formula();
-$result = $this->formula->totalProbability(1/3, [
-    7/11,
-    0,
-    1
+$result = $this->formula->totalProbability(
+    [0.33, 0.33, 0.33],
+    [0, 1, 0.45],
 ]);
 echo $result; // 6/11=0.(54)
 ```
@@ -66,19 +65,20 @@ $result = $this->formula->totalProbability([0.4, 0.8], [
 ]);
 echo $result; // 0.86
 ```
+We've got the probability, that the any picked item will be standard. 
 
 Then using Bayes formula:
 ```php
 $result = $this->formula->bayesProbability(0.4, 0.8, 0.86);
 echo $result; // 0.37
 ```
-We've got a probability, that the selected standard item related to 1st party.
+We've got a probability, that the selected standard item will be related to 1st party.
 
 ```php
 $result = $this->formula->bayesProbability(0.6, 0.9, 0.86);
 echo $result; // 0.63
 ```
-We've got a probability, that the selected standard item related to 2nd party.
+We've got a probability, that the selected standard item will be related to 2nd party.
 
 Check: 0.37+0.63=1
 
