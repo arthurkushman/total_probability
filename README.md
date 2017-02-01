@@ -91,7 +91,8 @@ Check: 0.37+0.63=1
 
 Find the probability, that within 10 flips of a coin tails will result in 3 times.
  
-Using combinatorial combinations function 10! / 7! * 3! = 120 and combining it with Bernoulli distribution formula - getting the result:
+Using combinatorial combinations function 10! / 7! * 3! = 120 
+and combining it with Bernoulli distribution formula ```Cmn * p^m * q^n-m``` - getting the result:
 
 ```php
 $result = $this->formula->independentProbability(10, 3, 0.5);
