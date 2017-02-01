@@ -1,7 +1,12 @@
 ## Total probability + Thomas Bayes, Bernoulli distribution formulas
 
-This project was created for those folks who love PHP and either want to have 
-a great library to work with Total probability and Bayes, Bernoulli formulas to calculate any real-world tasks on demand.
+This project was created for those folks who love Math + PHP and either want to have 
+a great library to work with Total probability and Bayes, Bernoulli formulas 
+to calculate any real-world tasks on demand.
+  
+* [Total probability](#user-content-total-probability)  
+* [Thomas Bayes](#user-content-thomas-bayes)
+* [Bernoulli distribution](#user-content-bernoulli-distribution)
   
 ### Examples
 
