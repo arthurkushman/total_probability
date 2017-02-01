@@ -32,7 +32,7 @@ $result = $this->formula->totalProbability(1/3, [
     0,
     1
 ]);
-echo $result; 6/11=0.(54)
+echo $result; // 6/11=0.(54)
 ```
 
 #### Thomas Bayes
@@ -49,7 +49,9 @@ relation of this item to 1st and 2nd party.
 
 Part 1:
 
-Overall items at the warehouse: 4000 + 6000 = 10000 -> 4000/10000 = 0.4, 6000/10000 = 0.8
+Overall items at the warehouse: 4000 + 6000 = 10000 -> 4000/10000 = 0.4, 6000/10000 = 0.6
+
+Check: 0.4+0.6=1
 
 - 1st party has standard items -> 100% - 20% = 80% standard items -> 80/100 = 0.8
 
@@ -58,12 +60,27 @@ Overall items at the warehouse: 4000 + 6000 = 10000 -> 4000/10000 = 0.4, 6000/10
 Using total probability formula:
 ```php
 $this->formula = new Formula();
-$result = $this->formula->totalProbability(1/3, [
-    7/11,
-    0,
-    1
+$result = $this->formula->totalProbability([0.4, 0.8], [
+    0.8,
+    0.9
 ]);
-echo $result; 6/11=0.(54)
+echo $result; // 0.86
 ```
 
+Then using Bayes formula:
+```php
+$result = $this->formula->bayesProbability(0.4, 0.8, 0.86);
+echo $result; // 0.37
+```
+We've got a probability, that the selected standard item related to 1st party.
+
+```php
+$result = $this->formula->bayesProbability(0.6, 0.9, 0.86);
+echo $result; // 0.63
+```
+We've got a probability, that the selected standard item related to 2nd party.
+
+Check: 0.37+0.63=1
+
 #### Bernoulli distribution
+

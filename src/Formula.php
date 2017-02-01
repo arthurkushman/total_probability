@@ -60,7 +60,7 @@ class Formula
     }
 
     /**
-     * Calculate Combinatorial combinations
+     * Calculate Combinatorial combinations without repetition
      * Cmn = m! / (m-n)! * n!
      *
      * @param int $m
@@ -74,6 +74,7 @@ class Formula
     }
 
     /**
+     * Calculates factorial recursively
      * @param int $n
      *
      * @return int
