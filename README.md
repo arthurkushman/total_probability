@@ -4,8 +4,13 @@
 
 ## Total probability + Thomas Bayes, Bernoulli distribution formulas
 
-This project was created for those folks who love PHP and either want to have 
-a great library to work with Total probability and Bayes, Bernoulli formulas to calculate any real-world tasks on demand.
+This project was created for those folks who love Math + PHP and either want to have 
+a great library to work with Total probability and Bayes, Bernoulli formulas 
+to calculate any real-world tasks on demand.
+  
+* [Total probability](#user-content-total-probability)  
+* [Thomas Bayes](#user-content-thomas-bayes)
+* [Bernoulli distribution](#user-content-bernoulli-distribution)
   
 ### Examples
 
@@ -87,4 +92,17 @@ We've got a probability, that the selected standard item will be related to 2nd 
 Check: 0.37+0.63=1
 
 #### Bernoulli distribution
+
+Find the probability, that within 10 flips of a coin tails will result in 3 times.
+ 
+Using combinatorial combinations function 10! / 7! * 3! = 120 
+and combining it with Bernoulli distribution formula ```Cmn * p^m * q^n-m``` - getting the result:
+
+```php
+$result = $this->formula->independentProbability(10, 3, 0.5);
+echo $result; // 0.1171875
+```
+We've got a probability, that withing 10 flips of a coin tails will result in 3 times.
+
+#### Inclination probability of relative frequency from probability
 
