@@ -1,3 +1,7 @@
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/arthurkushman/total_probability/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/arthurkushman/total_probability/?branch=master)
+[![Build Status](https://scrutinizer-ci.com/g/arthurkushman/total_probability/badges/build.png?b=master)](https://scrutinizer-ci.com/g/arthurkushman/total_probability/build-status/master)
+[![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103)](https://opensource.org/licenses/mit-license.php)
+
 ## Total probability + Thomas Bayes, Bernoulli distribution formulas
 
 This project was created for those folks who love Math + PHP and either want to have 
