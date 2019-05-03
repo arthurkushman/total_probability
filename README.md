@@ -100,5 +100,5 @@ echo $result; // 0.1171875
 ```
 We've got a probability, that withing 10 flips of a coin tails will result in 3 times.
 
-#### Inclination probability of relative frequency from probability
+#### The probability of the relative frequency deviation of the probability
 
